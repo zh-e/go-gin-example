@@ -26,7 +26,7 @@ type mysql struct {
 	MaxOpenConn int
 }
 
-func InitConfig() {
+func init() {
 	viper.SetConfigFile("./conf/app.yaml")
 	viper.ReadInConfig()
 

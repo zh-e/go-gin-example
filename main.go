@@ -3,14 +3,10 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"go-gin-example/conf"
-	"go-gin-example/models"
+	_ "go-gin-example/conf"
+	_ "go-gin-example/models"
 	"go-gin-example/routers"
 )
-
-func init() {
-	conf.InitConfig()
-	models.InitDB()
-}
 
 func main() {
 	r := gin.Default()
