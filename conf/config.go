@@ -10,6 +10,7 @@ var Config allConfig
 type allConfig struct {
 	Host  host
 	Mysql mysql
+	Redis redis
 }
 
 type host struct {
@@ -25,6 +26,13 @@ type mysql struct {
 
 	MaxIdleConn int
 	MaxOpenConn int
+}
+
+type redis struct {
+	Host     string
+	Port     string
+	Password string
+	DB       int
 }
 
 func init() {

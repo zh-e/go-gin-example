@@ -27,6 +27,7 @@ func Find(id int64) User {
 	return user
 }
 
+// TableName gorm 默认model转表 采用的是 model名字+复数 自定义表名需要实现此接口
 func (u *User) TableName() string {
 	return "app_user"
 }
