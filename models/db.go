@@ -11,12 +11,14 @@ import (
 
 var db *gorm.DB
 
+// https://gorm.io/zh_CN/docs/models.html
 func init() {
 	mysqlConfig := conf.Config.Mysql
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		mysqlConfig.User, mysqlConfig.Password, mysqlConfig.Host, mysqlConfig.Port, mysqlConfig.Database)
 
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	var err error
+	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		log.Fatal(err)
@@ -28,12 +30,5 @@ func init() {
 	sqlDB.SetMaxOpenConns(mysqlConfig.MaxOpenConn)
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
-	var res []User
-	db.Table("user").Where("id > 1").Model(&User{}).Scan(&res)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println("========", res)
+	log.Println("数据库连接初始化完成")
 }

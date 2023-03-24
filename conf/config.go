@@ -2,6 +2,7 @@ package conf
 
 import (
 	"github.com/spf13/viper"
+	"log"
 )
 
 var Config allConfig
@@ -32,4 +33,5 @@ func init() {
 
 	viper.Unmarshal(&Config)
 
+	log.Println("配置加载完成")
 }

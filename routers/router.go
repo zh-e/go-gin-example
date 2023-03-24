@@ -22,4 +22,7 @@ func InitRouter(r *gin.Engine) {
 	apiGroup.GET("/test/get/param1/:name", api.TestGetParam1)
 	apiGroup.POST("/test/post", api.TestPost)
 
+	apiGroup.POST("/test/create", api.TestSave)
+	apiGroup.GET("/test/find", api.TestFind)
+
 }
