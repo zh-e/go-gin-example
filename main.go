@@ -4,7 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 	_ "go-gin-example/cache"
 	"go-gin-example/conf"
-	_ "go-gin-example/conf"
 	_ "go-gin-example/models"
 	"go-gin-example/routers"
 )

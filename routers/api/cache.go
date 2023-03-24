@@ -2,7 +2,6 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	bean2 "go-gin-example/bean"
 	"go-gin-example/cache"
 	"log"
 	"net/http"
@@ -17,7 +16,7 @@ type Info struct {
 type InfoBody struct {
 	Id   int
 	Name string
-	Date bean2.Time
+	Date string
 }
 
 func TestCacheSet(c *gin.Context) {
