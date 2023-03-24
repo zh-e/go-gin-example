@@ -18,6 +18,7 @@ func init() {
 		mysqlConfig.User, mysqlConfig.Password, mysqlConfig.Host, mysqlConfig.Port, mysqlConfig.Database)
 
 	var err error
+	// 此处不可使用 := 给db赋值 要不然db只会是局部可用的
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
