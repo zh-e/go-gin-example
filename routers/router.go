@@ -28,4 +28,7 @@ func InitRouter(r *gin.Engine) {
 	apiGroup.POST("/cache/set", api.TestCacheSet)
 	apiGroup.GET("/cache/get", api.TestCacheGet)
 
+	apiGroup.POST("/file/upload", api.UploadFile)
+	apiGroup.POST("/file/download", api.DownloadFile)
+
 }

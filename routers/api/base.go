@@ -2,10 +2,12 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
 func TestGet(c *gin.Context) {
+	log.Println("test")
 	c.String(http.StatusOK, "test")
 }
 
